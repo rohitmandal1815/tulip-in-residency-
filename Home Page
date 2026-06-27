@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulip Inn Residency | Comfort & Luxury Hotel in Gurugram</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-maroon: #6b1d2f; /* Maroon color from Tulip logo */
+            --accent-gold: #b5945b;    /* Gold color from Tulip logo */
+            --dark-text: #222222;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- Top Bar --- */
+        .top-bar {
+            background-color: #111;
+            color: #fff;
+            font-size: 13px;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+        }
+        .top-bar a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .top-bar a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 10px 0;
+        }
+        .navbar-brand img {
+            max-height: 75px; /* Adjust based on your logo shape */
+        }
+        .nav-link {
+            color: var(--dark-text) !important;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 10px 15px !important;
+            transition: 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold) !important;
+        }
+        .btn-book {
+            background-color: var(--primary-maroon);
+            color: #fff !important;
+            border: 2px solid var(--primary-maroon);
+            border-radius: 0;
+            padding: 10px 25px;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+        .btn-book:hover {
+            background-color: transparent;
+            color: var(--primary-maroon) !important;
+        }
+
+        /* --- Hero Section & Booking Form --- */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+        }
+        
+        /* Sona Styled Booking Widget */
+        .booking-form-wrap {
+            background: #ffffff;
+            padding: 30px;
+            box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+        }
+        .booking-form-wrap h3 {
+            color: var(--primary-maroon);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .form-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #777;
+            letter-spacing: 1px;
+        }
+        .form-control, .form-select {
+            border-radius: 0;
+            border: 1px solid #e1e1e1;
+            padding: 12px;
+        }
+        .btn-search-room {
+            background-color: var(--accent-gold);
+            color: white;
+            border: none;
+            border-radius: 0;
+            width: 100%;
+            padding: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .btn-search-room:hover {
+            background-color: var(--primary-maroon);
+            color: white;
+        }
+
+        /* --- About Section --- */
+        .about-section {
+            padding: 80px 0;
+        }
+        .section-title {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        .section-title span {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-maroon);
+        }
+        .about-img img {
+            width: 100%;
+            height: auto;
+            border: 8px solid #f1f1f1;
+        }
+
+        /* --- Rooms Section --- */
+        .rooms-section {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+        }
+        .room-card {
+            background: #fff;
+            border: 1px solid #e1e1e1;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .room-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+        .room-img {
+            position: relative;
+            overflow: hidden;
+        }
+        .room-img img {
+            width: 100%;
+            transition: 0.5s;
+        }
+        .room-card:hover .room-img img {
+            transform: scale(1.05);
+        }
+        .room-price {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: var(--primary-maroon);
+            color: #fff;
+            padding: 8px 20px;
+            font-weight: 600;
+        }
+        .room-price span {
+            font-size: 12px;
+            font-weight: 300;
+        }
+        .room-details {
+            padding: 25px;
+        }
+        .room-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .room-details table td {
+            font-size: 13px;
+            color: #666;
+            padding: 5px 0;
+        }
+        .btn-view-detail {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        .btn-view-detail:hover {
+            color: var(--primary-maroon);
+        }
+
+        /* --- Services Section --- */
+        .services-section {
+            padding: 80px 0;
+        }
+        .service-box {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .service-box i {
+            font-size: 40px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+        .service-box h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* --- Footer Section --- */
+        .footer-section {
+            background: #111111;
+            color: #b9b9b9;
+            padding: 70px 0 30px;
+            font-size: 14px;
+        }
+        .footer-widget h5 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        .footer-widget ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-widget ul li {
+            margin-bottom: 12px;
+        }
+        .footer-widget ul li a {
+            color: #b9b9b9;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .footer-widget ul li a:hover {
+            color: var(--accent-gold);
+        }
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .footer-contact li i {
+            color: var(--accent-gold);
+            margin-right: 15px;
+            margin-top: 4px;
+        }
+        .copyright-area {
+            border-top: 1px solid #222;
+            padding-top: 25px;
+            margin-top: 50px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar d-none d-md-block">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <i class="fa-solid fa-envelope me-2 text-warning"></i> info@tulipinnresidency.com
+                    <span class="mx-3">|</span>
+                    <i class="fa-solid fa-phone me-2 text-warning"></i> +91 98765 43210
+                </div>
+                <div class="col-md-4 text-end">
+                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="borcelle.jpg" alt="Tulip Inn Residency Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="#booking" class="btn btn-book">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 hero-text">
+                    <p>Tulip Inn Residency</p>
+                    <h1>Experience Comfort & Luxury In Gurugram</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" id="booking">
+        <div class="booking-form-wrap">
+            <h3>Book Your Stay</h3>
+            <form action="#" method="POST">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="form-label">Check In</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label">Check Out</label>
